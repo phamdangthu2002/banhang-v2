@@ -16,7 +16,9 @@ $page_number = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $sanPham__Get_Ten_Sp_Paged = $sp->SanPham__Get_Ten_Sp_Paged($page_number, $tu_khoa);
 ?>
 <br><br><br>
-<main class="main">
+<br><br><br>
+
+<div class="container">
     <div class="main-container">
         <div class="main-title-container">
             <a href="index.php?pages=tim-kiem">
@@ -28,28 +30,22 @@ $sanPham__Get_Ten_Sp_Paged = $sp->SanPham__Get_Ten_Sp_Paged($page_number, $tu_kh
             <?php if (count($sanPham__Get_Ten_Sp_Paged) > 0): ?>
                 <?php foreach ($sanPham__Get_Ten_Sp_Paged as $item): ?>
                     <?php $anhSp__Get_By_Id_Sp_First = $anhSp->AnhSp__Get_By_Id_Sp_First($item->masp); ?>
-                    <div class="col-md-3">
-                        <div class="cardt mb-5">
-                            <div class="manga-container">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+                        <div class="product-item">
+                            <div class="manga-container__right">
                                 <div class="manga-thumbnail">
                                     <img src="../assets/<?= $anhSp__Get_By_Id_Sp_First->hinhanh ?>">
-                                    <span class="manga-note background-2">
-                                        <?= number_format($item->dongia) ?>đ <i class="bx bxs-star"></i>
+                                    <span class="manga-note background-8">
+                                        <?= number_format($item->dongia) ?>đ</i>
                                     </span>
                                 </div>
-
                             </div>
-                            <div class="cardt-body">
-                                <h5 class="card-title">
-                                    <div class="manga-title color-2">
-                                        <?= $item->tensp ?>
-                                    </div>
-                                </h5>
-                                <p class="cardt-text">
+                            <div class="product-info">
 
-                                </p>
+                                <h3><?= $item->tensp ?></h3>
+                                <p class="price"><?= $item->dongia ?> VND</p>
                                 <a href="index.php?pages=chi-tiet&masp=<?= $anhSp__Get_By_Id_Sp_First->masp ?>"
-                                    class="btn btn-primary">Mua Ngay</a>
+                                    class="btn btn-outline-dark">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +55,8 @@ $sanPham__Get_Ten_Sp_Paged = $sp->SanPham__Get_Ten_Sp_Paged($page_number, $tu_kh
             <?php endif ?>
         </div>
     </div>
-
+</div>
+<main class="main">
     <div class="pagination-container">
         <div class="pagination">
             <?php

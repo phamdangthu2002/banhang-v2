@@ -1,0 +1,252 @@
+/* Product Detail */
+#product {
+  margin-top: 80px;
+  border-radius: 20px;
+  background-color: #f0f1f5;
+  padding: 0;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2);
+  width: auto;
+}
+
+#product .card-img {
+  margin: 1px;
+  border-radius: 20px 0 0 20px;
+  background-color: #e9e9e9;
+  padding: 30px 0 40px;
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+.product-detail {
+  padding: 50px 50px 100px;
+}
+
+.product-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  transition: opacity 0.5s ease;
+}
+
+.product-name {
+  padding-top: 100px;
+}
+
+.row {
+  display: flex;
+  margin-top: 30px;
+  /* padding-bottom: 100px; */
+}
+
+.info-right {
+  margin-left: 20px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    justify-content: flex-start;
+  }
+}
+
+label .product-name,
+.product-price {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 20px;
+  color: black;
+}
+
+/* Sliders */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-wrapper {
+  display: flex;
+  position: relative;
+  max-width: 600px;
+  margin: 50px;
+}
+
+.carousel-wrapper input {
+  display: none;
+}
+
+.carousel {
+  width: 100%;
+  border-radius: 15px;
+  height: 600px;
+  overflow: hidden; /* Thêm thuộc tính này để ẩn ảnh không hiển thị */
+}
+
+.carousel ul {
+  display: flex;
+  align-items: center;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 500%; /* Đảm bảo mỗi ảnh chiếm 100% chiều rộng của carousel */
+  transition: left 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.carousel li {
+  width: 20%; /* Đảm bảo mỗi ảnh chiếm 20% chiều rộng của carousel */
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.nav-dot {
+  position: absolute;
+  cursor: pointer;
+  margin-left: -7.5px;
+  bottom: -22.5px;
+  width: 15px;
+  height: 15px;
+  opacity: 0.5;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.nav-dot img {
+  border-radius: 15px;
+  height: 20px;
+  width: auto;
+}
+
+.nav-dot:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
+.nav-dot:active {
+  transform: scale(0.9);
+}
+
+.nav-dot[for=slide1] {
+  left: calc(50% + ((0 - 2) * 5%));
+}
+
+.nav-dot[for=slide2] {
+  left: calc(50% + ((1 - 2) * 5%));
+}
+
+.nav-dot[for=slide3] {
+  left: calc(50% + ((2 - 2) * 5%));
+}
+
+.nav-dot[for=slide4] {
+  left: calc(50% + ((3 - 2) * 5%));
+}
+
+.nav-dot[for=slide5] {
+  left: calc(50% + ((4 - 2) * 5%));
+}
+
+#slide1:checked ~ .carousel ul {
+  left: 0%;
+}
+
+#slide2:checked ~ .carousel ul {
+  left: -100%;
+}
+
+#slide3:checked ~ .carousel ul {
+  left: -200%;
+}
+
+#slide4:checked ~ .carousel ul {
+  left: -300%;
+}
+
+#slide5:checked ~ .carousel ul {
+  left: -400%;
+}
+
+#slide1:checked ~ .nav-dot[for=slide1],
+#slide2:checked ~ .nav-dot[for=slide2],
+#slide3:checked ~ .nav-dot[for=slide3],
+#slide4:checked ~ .nav-dot[for=slide4],
+#slide5:checked ~ .nav-dot[for=slide5] {
+  opacity: 1;
+}
+
+.left-arrow,
+.right-arrow {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  font-weight: bolder;
+  text-shadow: 0 0 7.5px rgba(0, 0, 0, 0.7);
+  top: 50%;
+  z-index: 1;
+  opacity: 0.7;
+  margin-top: -25px;
+  height: 50px;
+  font-size: 50px;
+  transition: 0.2s;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.left-arrow:active,
+.right-arrow:active {
+  transform: scale(0.9);
+}
+
+.left-arrow {
+  left: 15px;
+}
+
+.right-arrow {
+  right: 15px;
+}
+
+#slide1:checked ~ .left-arrow[for=slide5],
+#slide2:checked ~ .left-arrow[for=slide1],
+#slide3:checked ~ .left-arrow[for=slide2],
+#slide4:checked ~ .left-arrow[for=slide3],
+#slide5:checked ~ .left-arrow[for=slide4],
+#slide1:checked ~ .right-arrow[for=slide2],
+#slide2:checked ~ .right-arrow[for=slide3],
+#slide3:checked ~ .right-arrow[for=slide4],
+#slide4:checked ~ .right-arrow[for=slide5],
+#slide5:checked ~ .right-arrow[for=slide1] {
+  display: block;
+}
+
+.signature {
+  margin-top: 100px;
+  bottom: 0;
+  font-family: "Quicksand";
+  color: rgba(150, 150, 170);
+  text-shadow: 0 2.5px rgba(0, 0, 0, 0.25);
+}
+
+.signature .name {
+  color: white;
+}
+
+.signature .dot {
+  margin: 0 55px;
+}
+
+.signature a {
+  color: white;
+  text-decoration: underline;
+}

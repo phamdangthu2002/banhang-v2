@@ -6,6 +6,4 @@
   <br>
   facebook: https://www.facebook.com/pdtthu
 
-# banhang
-# banhang
-# tieuluan-banhang
+# banhang-v2
