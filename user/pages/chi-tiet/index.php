@@ -16,17 +16,24 @@ $sp__Get_Top_Sale = $sp->SanPham__Get_Top_Sale();
 $sp__Get_Top_Same = $sp->SanPham__Get_Top_Same($sp__Get_By_Id->math, $masp);
 $anhSp__Get_By_Id_Sp_Not_First = $anhSp->AnhSp__Get_By_Id_Sp_Not_First($sp__Get_By_Id->masp);
 ?>
+<style>
+    <?php
+    $totalSlides = count($anhSp__Get_By_Id_Sp_Not_First);
+    for ($i = 0; $i < $totalSlides; $i++) {
+        $position = 50 + (($i - 2) * 5);
+        echo ".nav-dot[for=slide" . $i . "] { left: calc(50% + ((" . $i . " - 2) * 5%)); }";
+    }
+    ?>
+</style>
 <br><br>
 <br><br>
 <div id="product" class="container product-detail">
     <div class="row">
         <div class="col-md-6">
             <div class="carousel-wrapper">
-                <input type="radio" name="slider" id="slide1" checked>
-                <input type="radio" name="slider" id="slide2">
-                <input type="radio" name="slider" id="slide3">
-                <input type="radio" name="slider" id="slide4">
-                <input type="radio" name="slider" id="slide5">
+                <?php for ($i = 1; $i < count($anhSp__Get_By_Id_Sp_Not_First); $i++): ?>
+                    <input type="radio" name="slider" id="slide<?= $i ?>" <?= $i == 1 ? 'checked' : '' ?>>
+                <?php endfor ?>
 
                 <div class="carousel">
                     <ul>

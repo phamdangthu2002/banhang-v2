@@ -102,7 +102,7 @@ label {
 }
 
 .carousel img {
-  width: 100%;
+  width: 470px;
   height: auto;
   border-radius: 15px;
 }
@@ -110,10 +110,10 @@ label {
 .nav-dot {
   position: absolute;
   cursor: pointer;
-  margin-left: -7.5px;
+  margin-left: -50px;
   bottom: -22.5px;
   width: 15px;
-  height: 15px;
+  /* height: 15px; */
   opacity: 0.5;
   border-radius: 50%;
   transition: 0.4s;
@@ -134,7 +134,7 @@ label {
   transform: scale(0.9);
 }
 
-.nav-dot[for=slide1] {
+/* .nav-dot[for=slide1] {
   left: calc(50% + ((0 - 2) * 5%));
 }
 
@@ -152,7 +152,7 @@ label {
 
 .nav-dot[for=slide5] {
   left: calc(50% + ((4 - 2) * 5%));
-}
+} */
 
 #slide1:checked ~ .carousel ul {
   left: 0%;
